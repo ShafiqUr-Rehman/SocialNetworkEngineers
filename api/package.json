@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^22.7.6",
+    "@types/react": "^18.3.11",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase": "^10.14.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "start": "node api/index.js"
+  }
+}

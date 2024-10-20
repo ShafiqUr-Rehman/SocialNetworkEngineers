@@ -1,0 +1,53 @@
+{
+  "name": "next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.7.3",
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "@radix-ui/react-toast": "^1.2.2",
+    "@react-google-maps/api": "^2.20.3",
+    "@types/node": "22.7.2",
+    "@types/react": "18.3.9",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "eslint-config-next": "14.2.13",
+    "firebase": "^10.14.1",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.453.0",
+    "next": "^14.2.15",
+    "postcss": "8.4.47",
+    "react": "18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.53.1",
+    "react-hot-toast": "^2.4.1",
+    "react-intersection-observer": "^9.13.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-table": "^7.8.0",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss": "3.4.13",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.6.2",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "eslint": "^8.0.0"
+  }
+}
