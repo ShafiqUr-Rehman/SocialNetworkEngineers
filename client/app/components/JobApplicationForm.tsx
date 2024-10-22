@@ -21,7 +21,7 @@ const JobApplicationForm: React.FC = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/apply', {
+      const response = await axios.post('https://social-network-engineers-api.vercel.app/api/apply', {
         applicantName,
         applicantEmail,
         coverLetter,

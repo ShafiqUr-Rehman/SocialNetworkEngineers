@@ -48,7 +48,7 @@ export default function UserRegistration() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/register/enroll', formDataToSend, {
+      const response = await axios.post('https://social-network-engineers-api.vercel.app/api/register/enroll', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

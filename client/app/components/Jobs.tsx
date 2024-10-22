@@ -18,7 +18,7 @@ type Job = {
   benefits: string
 }
 
-const API_BASE_URL = 'http://localhost:3001/api/admin'
+const API_BASE_URL = 'https://social-network-engineers-api.vercel.app/api/admin'
 
 export default function Jobs() {
   const [jobs, setJobs] = useState<Job[]>([])

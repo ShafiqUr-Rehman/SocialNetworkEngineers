@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://social-network-engineers-api.vercel.app/api';
 
 const jobSchema = yup.object({
   company: yup.string().required().min(2).max(100),
