@@ -1,4 +1,5 @@
 import Engineer from '../models/register.model.js';
+const { StatusCodes} = require("http-status-codes");
 import path from 'path';
 
 export const registerEngineer = async (req, res) => {
@@ -7,7 +8,7 @@ export const registerEngineer = async (req, res) => {
 
   try {
     if (!name || !title || !company || !location || !skills || !experience || !cvFile) {
-      return res.status(400).json({ message: 'All fields are required, including CV upload.' });
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'All fields are required, including CV upload.' });
     }
 
     // Create the URL path for the CV file
@@ -26,19 +27,19 @@ export const registerEngineer = async (req, res) => {
 
     await engineer.save();
 
-    res.status(200).json({ message: 'Engineer registered successfully!', engineer });
+    res.status(StatusCodes.OK).json({ message: 'Engineer registered successfully!', engineer });
   } catch (error) {
     console.error('Error in registerEngineer:', error);
-    res.status(500).json({ message: 'Error registering engineer.', error: error.message });
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error registering engineer.', error: error.message });
   }
 };
 
 export const fetchEngineers = async (req, res) => {
   try {
     const engineers = await Engineer.find();
-    res.status(200).json(engineers);
+    res.status(StatusCodes.OK).json(engineers);
   } catch (error) {
     console.error('Error in fetchEngineers:', error);
-    res.status(500).json({ message: 'Error fetching engineers.', error: error.message });
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error fetching engineers.', error: error.message });
   }
 };
