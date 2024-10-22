@@ -1,11 +1,12 @@
 import { JobApplication } from '../models/Application.js';
+const { StatusCodes} = require("http-status-codes");
 
 export const ApplicationData = async (req, res) => {
   const { applicantName, applicantEmail, coverLetter } = req.body;
 
   try {
     if (!applicantName || !applicantEmail || !coverLetter) {
-      return res.status(400).json({ message: 'All fields are required.' });
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'All fields are required.' });
     }
 
     const application = new JobApplication({
@@ -15,20 +16,20 @@ export const ApplicationData = async (req, res) => {
     });
 
     await application.save();
-    res.status(200).json({ message: 'Application submitted successfully!' });
+    res.status(StatusCodes.OK).json({ message: 'Application submitted successfully!' });
   } catch (error) {
     console.error('Error in ApplicationData:', error);
-    res.status(500).json({ message: 'Error submitting application.', error: error.message });
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error submitting application.', error: error.message });
   }
 };
 
 export const fetchApplications = async (req, res) => {
   try {
     const applications = await JobApplication.find();  // Removed populate
-    res.status(200).json(applications);
+    res.status(StatusCodes.OK).json(applications);
   } catch (error) {
     console.error('Error in fetchApplications:', error);
-    res.status(500).json({ message: 'Error fetching applications.', error: error.message });
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error fetching applications.', error: error.message });
   }
 };
 
@@ -42,10 +43,10 @@ export const fetchApplications = async (req, res) => {
 //     if (!updatedApplication) {
 //       return res.status(404).json({ message: 'Application not found' });
 //     }
-//     res.status(200).json(updatedApplication);
+//     res.status(StatusCodes.OK).json(updatedApplication);
 //   } catch (error) {
 //     console.error('Error in editApplication:', error);
-//     res.status(500).json({ message: 'Error updating application', error: error.message });
+//     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error updating application', error: error.message });
 //   }
 // };
 
@@ -57,9 +58,9 @@ export const fetchApplications = async (req, res) => {
 //     if (!deletedApplication) {
 //       return res.status(404).json({ message: 'Application not found' });
 //     }
-//     res.status(200).json({ message: 'Application deleted successfully!' });
+//     res.status(StatusCodes.OK).json({ message: 'Application deleted successfully!' });
 //   } catch (error) {
 //     console.error('Error in deleteApplication:', error);
-//     res.status(500).json({ message: 'Error deleting application', error: error.message });
+//     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error deleting application', error: error.message });
 //   }
 // };
