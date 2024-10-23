@@ -24,7 +24,7 @@ mongoose
   });
 
 const corsOptions = {
-  origin: 'http://localhost:3000', 
+  origin: ['http://localhost:3000','https://social-network-frontend-mu.vercel.app/'],
   optionsSuccessStatus: 200
 };
 
