@@ -17,7 +17,7 @@ type Engineer = {
   cvUrl: string
 }
 
-const API_BASE_URL = 'https://social-network-engineers-api.vercel.app/api';
+const API_BASE_URL = 'https://social-network-engineers-api.vercel.app';
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState('')
