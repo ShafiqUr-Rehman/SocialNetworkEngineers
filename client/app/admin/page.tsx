@@ -63,7 +63,7 @@ export default function AdminPage() {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/admin/jobs`);
+      const response = await axios.get(`https://social-network-engineers-api.vercel.app/api/admin/jobs`);
       setJobs(response.data);
     } catch (error) {
       console.error('Failed to fetch jobs:', error);
